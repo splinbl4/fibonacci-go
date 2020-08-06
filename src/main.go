@@ -9,7 +9,7 @@ import (
 
 func main() {
 	http.HandleFunc("/", handler)
-	log.Fatal(http.ListenAndServe("localhost:8000", nil))
+	log.Fatal(http.ListenAndServe(":8000", nil))
 }
 
 func handler(w http.ResponseWriter, r *http.Request) {
@@ -48,7 +48,7 @@ func Count(fib fibfunc, start int, end int) chan int {
 }
 
 func fibi(n int) int {
-	var a, b int = 1, 1
+	var a, b = 1, 1
 	for i := 0; i < n; i++ {
 		a, b = b, a+b
 	}

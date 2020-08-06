@@ -1,5 +1,5 @@
 FROM golang:1.14-alpine as build
-ADD . /go/src/app
+ADD ./src /go/src/app
 WORKDIR /go/src/app
 RUN go build -v
 
